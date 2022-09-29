@@ -1,0 +1,46 @@
+B
+
+    Ö~t`<  ã               @   s,   d dl Z dd„ Zdd„ Zdd„ Zdd	„ ZdS )
+é    Nc              C   sà   t ddƒ} |  ¡ }|  ¡  d}x|D ]}|d7 }q$W d}t|d ƒ}x–tddƒD ]ˆ}t|ƒd }tj t 	¡ d |¡}t |dƒ} d}	xJt||ƒD ]<}
+|d7 }|  
+||
+ ¡ |	d7 }	|	|kr|d	kr|  ¡  P qW |  ¡  qPW d S )
+NzOriginal.txtÚrr   é   é   z.txtz	\SegmentsÚwé   )ÚopenÚreadÚcloseÚintÚrangeÚstrÚosÚpathÚjoinÚgetcwdÚwrite)ÚfÚconÚcountÚcharÚkÚlimitÚiÚnamer   ZctrÚj© r   ú_C:\Users\shrey\Downloads\Secure-File-Storage-Using-Hybrid-Cryptography-master\dataProcessing.pyÚSegment   s*    
+
+
+r   c              C   s˜   t  ¡ } | d } t  ¡ }|d }t| dƒ}t  t j t  ¡ d ¡¡}xF|D ]>}t|| dƒ}| ¡ }| tt	|ƒƒ¡ | d¡ | 
+¡  qJW | 
+¡  d S )Nz/Infos/Log.txtz
+/Segments/r   z	\Segmentsr   z::::)r
+   r   r   Úlistdirr   r   r   r   r   Úlenr	   )Úpath1Úpath2ÚmainFileÚlisDirr   r   Úcontentr   r   r   Ú
+gatherInfo   s    
+
+
+r%   c        
+      C   sà   t  ¡ } | d } t| dƒ}| ¡ }| ¡  | d¡}t  ¡ }|d }t  |¡}d}d}d}x€|D ]x}|d | }	t|	dƒ}
+|
+ ¡ }|
+ ¡  t|| ƒ}|d |… }|d7 }t|	d	ƒ ¡  t|	d	ƒ}
+|
+ |¡ |
+ ¡  d}q`W d S )
+Nz/Infos/Log.txtr   z::::z	/SegmentsÚ r   ú/r   r   )	r
+   r   r   r   r	   Úsplitr   r
+   r   )
+r    r"   r$   r!   r#   ZtDataÚcr   r   Zpath3r   ÚdataÚnr   r   r   Útrim)   s2    
+
+
+
+
+
+
+r,   c              C   s„   t ddƒ} xltddƒD ]^}tj t ¡ d t|ƒd ¡}t |dƒ}| ¡ }td|d	|ƒ |  	|¡ | 
+¡  t |¡ qW |  
+¡  d S )
+Nz
+Output.txtr   r   r   z	\Segmentsz.txtr   zFrom Encrypted file - z->)r   r   r
+   r   r   r   r   r   Úprintr   r	   Úremove)r"   r   r   r   Úcontr   r   r   ÚMergeF   s    
+
+
+r0   )r
+   r   r%   r,   r0   r   r   r   r   Ú<module>   s   
